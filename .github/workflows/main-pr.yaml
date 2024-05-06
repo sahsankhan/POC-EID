@@ -1,0 +1,44 @@
+name: Run Cypress Test on Pull Request
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  cypress:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Cypress test with fe_url
+        uses: cypress-io/github-action@v6
+        if: github.event.inputs.fe_url != null && github.event.inputs.fe_url != ''
+        with:
+          config-file: cypress.config.js
+          start: npx cypress run --config baseUrl=${{ github.event.inputs.fe_url }}  --reporter mochawesome
+          install: true
+          browser: firefox
+
+      - name: Upload Screenshots
+        uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: ./cypress/screenshots
+
+      - name: Upload Videos
+        uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: cypress-videos
+          path: ./cypress/videos
