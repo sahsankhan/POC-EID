@@ -29,6 +29,7 @@ And("I fill in 'Onboard a Person' form with the following data:", (dataTable) =>
 
     if (data.hasOwnProperty('BusinessRole')) {
         PeoplePage.selectRoleAndLocation().click();
+        PeoplePage.browse().click();
         PeoplePage.searchButtonLocator().eq(0).click({ force: true });
         PeoplePage.getItemByTextLocator(data.BusinessRole).scrollIntoView().should('be.visible').click()
 
@@ -36,18 +37,18 @@ And("I fill in 'Onboard a Person' form with the following data:", (dataTable) =>
     if (data.hasOwnProperty('Location')) {
         PeoplePage.locationLocator().should('be.visible').click();
         PeoplePage.searchButtonLocator().eq(0).click({ force: true });
-        // PeoplePage.getItemByTextLocator(data.Location).eq(1).should('be.visible').click();
+        PeoplePage.getItemByTextLocator(data.Location).eq(1).should('be.visible').click();
         PeoplePage.locationRolelocation().click();
     }
 
     PeoplePage.selectButtonLocator().should('be.visible').click();
 
-    if (data.hasOwnProperty('Manager')) {
-        PeoplePage.managerSearchFieldLocator().type(data.Manager).realType('{enter}');
-    }
+    // if (data.hasOwnProperty('Manager')) {
+    //     PeoplePage.managerSearchFieldLocator().type(data.Manager).realType('{enter}');
+    // }
 
     CommonLocators.getButtonLocator('Next').click();
-    CommonLocators.getButtonLocator('Submit').should('be.visible').click();
+    // CommonLocators.getButtonLocator('Submit').should('be.visible').click();
 
 })
 

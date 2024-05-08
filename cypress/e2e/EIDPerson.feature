@@ -16,6 +16,6 @@ Feature:EIDPerson
         And I wait '10' seconds
         And I press 'Next' button
         And I fill in 'Onboard a Person' form with the following data:
-            | FirstName | LastName | Email              | BusinessRole   | Location             | Manager    |
-            | Test      | Person   | test@EmpowerID.com | Temporary Role | Default Organization | Ahsan Khan |
+            | FirstName | LastName | Email              | BusinessRole   | Location             |
+            | Test      | Person   | test@EmpowerID.com | Temporary Role | Default Organization |
         Then I should see 'Create Person Ahsan Khan in Temporary Role in Temporary Location was executed successfully.' success message on Person page

@@ -27,7 +27,7 @@ class LoginPage {
     }
 
     cookieConsentButton(){
-        return cy.xpath(`//button[text()=' OK ']`)
+        return cy.xpath('//div[contains(@class, "eid-cookie-close-icon")]')
     }
 }
 

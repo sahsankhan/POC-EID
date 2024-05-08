@@ -20,6 +20,10 @@ emailLocator(){
 return cy.get(`input[name='Email']`)
 }
 
+browse(){
+    return cy.xpath(`(//span[@data-bind="text: Title" and text()="Browse"])[2]`)
+}
+
 selectRoleAndLocation(){
     return cy.xpath(`//a[text()='Select a Role and Location']`)
 }
@@ -41,7 +45,7 @@ locationLocator(){
 }
 
 selectButtonLocator(){
-    return cy.get(` div.eid-OrgRoleOrgZoneTree-button`);
+    return cy.get(`div.eid-OrgRoleOrgZoneTree-button`);
 }
 
 managerSearchFieldLocator(){
@@ -53,7 +57,8 @@ successMessageLocator(text){
 }
 
 locationRolelocation(){
-    return cy.xpath(`//div//a[@class='eid-tree-node-link jstree-anchor']//span//span[contains(., 'Default Organization')]`).eq(1);
+    // return cy.xpath(`//div//a[@class='eid-tree-node-link jstree-anchor']//span//span[contains(., 'Default Organization')]`).eq(1);
+    return cy.xpath(`(//span[@data-bind="text: FirstTitlePart()"][text()="HB FlatFile_Locations"])[2]`);
 }
 
 }
