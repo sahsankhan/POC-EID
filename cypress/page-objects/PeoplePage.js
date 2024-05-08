@@ -21,7 +21,7 @@ return cy.get(`input[name='Email']`)
 }
 
 browse(){
-    return cy.xpath(`(//span[@data-bind="text: Title" and text()="Browse"])[2]`)
+    return cy.xpath(`(//span[@data-bind="text: Title" and text()="Browse"][2])`)
 }
 
 selectRoleAndLocation(){
@@ -29,11 +29,15 @@ selectRoleAndLocation(){
 }
 
 searchButtonLocator(){
-return cy.xpath (`(//div[contains(@class, 'eid-OrgRoleOrgZoneTree-accordion')]//button[starts-with(@id, 'eid-tree-searchbutton-')])[1]`);
+return cy.xpath (`(//div[contains(@class, 'eid-OrgRoleOrgZoneTree-accordion')]//button[starts-with(@id, 'eid-tree-searchbutton-')])`);
 }
 
+searchFieldLocator(){
+    return cy.get(`.eid-input-group-left-buttons input[placeholder='Enter search']`);
+    }
+
 getItemByTextLocator(text){
-    return cy.xpath(`//span//span[contains(., "${text}")]`)
+    return cy.xpath(`//span//span[contains(., "${text}") and contains(@class,'jstree-searchresult')]`)
 }
 
 temporaryRoleLocator(){

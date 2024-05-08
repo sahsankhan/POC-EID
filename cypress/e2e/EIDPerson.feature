@@ -18,4 +18,6 @@ Feature:EIDPerson
         And I fill in 'Onboard a Person' form with the following data:
             | FirstName | LastName | Email              | BusinessRole   | Location             |
             | Test      | Person   | test@EmpowerID.com | Temporary Role | Default Organization |
-        Then I should see 'Create Person Ahsan Khan in Temporary Role in Temporary Location was executed successfully.' success message on Person page
+        And I press 'Next' button
+        And I press 'Submit' button
+        Then I should see 'Create Person Test Person in Temporary Role in Default Organization was executed successfully.' success message on Person page
