@@ -1,7 +1,8 @@
 Feature: EIDlogin
 
 Scenario: I should be able to login with valid credentials
-Given I visit EmpowerID
+Given I visit EmpowerID  
+
 When I enter valid username and password on login page
 And I press login button
 Then I should see 'Which Persona do you want to login' as on Person selection page
