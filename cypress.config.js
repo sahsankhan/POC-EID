@@ -1,27 +1,3 @@
-// const {defineConfig} = require("cypress");
-// const cucumber = require('cypress-cucumber-preprocessor').default;
-// module.exports = defineConfig({
-//     e2e: {
-//         // baseUrl: 'https://staging.lineup.ai',
-//         // baseUrl: 'https://lineup-backend-2025-web.ci.lineup.ai/',
-//         baseUrl: 'https://demo1.empowerid.net/WebIdPForms/Login/Portal',
-//         specPattern: 'cypress/e2e/**/*.feature', // Update the specPattern to match your feature file location
-//         defaultCommandTimeout: 35000,
-//         setupNodeEvents(on, config) {
-//             on('file:preprocessor', cucumber({
-//                 resolveStepDefinition(definition) {
-//                     return definition;
-//                 },
-//                 featureName: "___GLOBAL_EXECUTION___",
-//                 nonGlobalStepDefinitions: false,
-//                 stepDefinitions: './cypress/support/step_definitions/'
-//             }));
-//         }
-//     }
-// });
-
-
-
 const { defineConfig } = require("cypress");
 const cucumber = require('cypress-cucumber-preprocessor').default;
 
@@ -39,7 +15,7 @@ module.exports = defineConfig({
                 },
                 featureName: "___GLOBAL_EXECUTION___",
                 nonGlobalStepDefinitions: false,
-                stepDefinitions: './cypress/support/step_definitions/'
+                stepDefinitions: './cypress/support/step-definitions/'
             }));
         }
     }
