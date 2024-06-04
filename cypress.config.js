@@ -15,7 +15,7 @@ module.exports = defineConfig({
                 },
                 featureName: "___GLOBAL_EXECUTION___",
                 nonGlobalStepDefinitions: false,
-                stepDefinitions: './cypress/support/step-definitions/'
+                stepDefinitions: './cypress/support/step-definitions/**/*.js'
             }));
         }
     }
