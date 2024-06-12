@@ -117,3 +117,106 @@ And("I fill in 'Onboard a Person' form with the following data:", (dataTable) =>
 Then("I should see {string} success message on Person page", (text) => {
     commonLocator.successMessageLocator(text).should('be.visible');
 });
+
+
+And("I click on {string} tab", (text) => {
+    commonLocator.navbartablocator(text).click();
+});
+
+And("I fill in 'Global Functions' form with the following data:", (dataTable) => {
+    const data = dataTable.hashes()[0];
+    if (data.hasOwnProperty('Name')) {
+        commonLocator.nameLocator().should('be.visible').type(data.Name);
+    }
+    if (data.hasOwnProperty('DisplayName')) {
+        commonLocator.friendlyNameLocator().should('be.visible').type(data.DisplayName);
+    }
+
+    if (data.hasOwnProperty('Description')) {
+        commonLocator.descriptionLocator().should('be.visible').type(data.Description);
+    }
+
+    if (data.hasOwnProperty('FunctionType')) {
+        commonLocator.functionTypeLocator().type(data.FunctionType) 
+        .type('{enter}');
+    }
+
+    if (data.hasOwnProperty('RiskLevel')) {
+        commonLocator.riskLevelLocator().type(data.RiskLevel).type('{enter}');
+    }
+
+    if (data.hasOwnProperty('RiskResourceSet')) {
+        commonLocator.riskResourceSetLocator().type(data.RiskResourceSet).type('{enter}');
+    }
+
+    if (data.hasOwnProperty('Location')) {
+        commonLocator.selectLocationLocator().should('be.visible').click();
+        commonLocator.browse().eq(1).click();
+        cy.wait(2000);
+        commonLocator.getLocationItemByText(data.Location).should('be.visible').click();
+    }
+    commonLocator.LocationTreeSaveButtonLocator().click();
+});
+
+And("I click on add button", () => {
+commonLocator.eidAddButtonLocator().click();
+})
+
+And("I click on 'save' button on 'Global Functions' page", () => {
+    commonLocator.saveButtonLocatorForEidGrid().click();
+    })
+
+Then("I should see {string} success message", (text) => {
+    commonLocator.successNotificationlocator(text).should('be.visible');
+});
+
+And("I collapse location panel", () => {
+    commonLocator.locationPanelLocator().eq(1).click({force: true});
+})
+
+And("I search {string} on 'Global Functions' Page", (text) => {
+    commonLocator.globalFunctionSearchFieldLocator().eq(2).type(text);
+    commonLocator.globalFunctionSearchButtonLocator().eq(1).click();
+})
+
+
+And("I click on {string} button on Global Functions Page", (buttonName) => {
+    if (buttonName.toLowerCase() === "edit"){
+        commonLocator.globalFunctionEditButtonLocator().eq(10).click();
+    }
+    else if (buttonName.toLowerCase() === "delete"){
+        commonLocator.globalFunctionRemoveButtonLocator().eq(10).click();
+    }
+})
+
+// And("I click on 'Edit' button on Global Functions page", () => {
+//     commonLocator.globalFunctionEditButtonLocator().eq(10).click();
+// })
+
+
+And("I edit 'Global Functions' form with the following data:", (dataTable) => {
+    const data = dataTable.hashes()[0];
+    if (data.hasOwnProperty('Name')) {
+        commonLocator.nameLocator().should('be.visible').clear().type(data.Name);
+    }
+    if (data.hasOwnProperty('DisplayName')) {
+        commonLocator.friendlyNameLocator().should('be.visible').clear().type(data.DisplayName);
+    }
+
+    if (data.hasOwnProperty('Description')) {
+        commonLocator.descriptionLocator().should('be.visible').clear().type(data.Description);
+    }
+
+    if (data.hasOwnProperty('FunctionType')) {
+        commonLocator.functionTypeLocator().clear().type(data.FunctionType) 
+        .type('{enter}');
+    }
+
+    if (data.hasOwnProperty('RiskLevel')) {
+        commonLocator.riskLevelLocator().clear().type(data.RiskLevel).type('{enter}');
+    }
+
+    if (data.hasOwnProperty('RiskResourceSet')) {
+        commonLocator.riskResourceSetLocator().clear().type(data.RiskResourceSet).type('{enter}');
+    }
+});
