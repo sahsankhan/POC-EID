@@ -173,8 +173,10 @@ And("I collapse location panel", () => {
 });
 
 And("I search {string} on 'Global Functions' Page", (text) => {
-    commonLocator.globalFunctionSearchFieldLocator().eq(2).type(text);
-    commonLocator.globalFunctionSearchButtonLocator().eq(1).click();
+    commonLocator.globalFunctionSearchFieldLocator().eq(2).type(text).then(() => {
+        commonLocator.globalFunctionSearchFieldLocator().eq(2).type('{enter}');
+    });
+    // commonLocator.globalFunctionSearchButtonLocator().click({force: true, multiple: true });
 });
 
 And("I click on {string} button on Global Functions Page", (buttonName) => {

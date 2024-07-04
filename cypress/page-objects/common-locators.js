@@ -188,7 +188,8 @@ class commonLocator {
     }
 
     globalFunctionSearchButtonLocator(){
-        return cy.get(`button.eid-input-group-button[data-bind*="click: search"]:visible`);
+        // return cy.get(`button.eid-input-group-button[data-bind*="click: search"]:visible`);
+       return  cy.get('button.eid-input-group-button');
     }
 
     globalFunctionEditButtonLocator(){
