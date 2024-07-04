@@ -179,7 +179,8 @@ class commonLocator {
     }
  
     saveButtonLocatorForEidGrid(){
-        return cy.get(`div.eid-grid-edit-popup-buttons > button:visible`);
+        // return cy.get(`div.eid-grid-edit-popup-buttons > button:visible`);
+        return cy.get(`button[data-bind*="SaveRowCommand"]`).eq(1);
     }
 
     globalFunctionSearchFieldLocator(){
@@ -187,7 +188,7 @@ class commonLocator {
     }
 
     globalFunctionSearchButtonLocator(){
-        return cy.get(`button.eid-input-group-button[data-bind*="click: search"]`);
+        return cy.get(`button.eid-input-group-button[data-bind*="click: search"]:visible`);
     }
 
     globalFunctionEditButtonLocator(){
