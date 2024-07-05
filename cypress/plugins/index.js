@@ -6,6 +6,8 @@ module.exports = (on, config) => {
   return config;
 };
 
+import "cypress-cucumber-attach-screenshots-to-failed-steps";
+
 Cypress.on('uncaught:exception', (err, runnable) => {
   console.error('An uncaught error was detected: ', err);
   return false; // Returning false here prevents Cypress from failing the test

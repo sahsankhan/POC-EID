@@ -6,7 +6,7 @@ Feature: EIDRiskManagement
         And I press login button
         Then I should see 'Which Persona do you want to login' as on Person selection page
         When I click on Ahsan Khan on Person Selection page
-        Then I should see 'Compliance' tab on dashboard page
+        Then I should see 'hsdfhsdf' tab on dashboard page
         When I click on 'Compliance' tab on dashboard page
         And I click on 'Risk Policies' tab on dashboard page
         And I wait '5' seconds

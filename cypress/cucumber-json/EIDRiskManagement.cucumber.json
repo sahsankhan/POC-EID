@@ -1,0 +1,182 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "EIDRiskManagement",
+    "line": 1,
+    "id": "eidriskmanagement",
+    "tags": [],
+    "uri": "EIDRiskManagement.feature",
+    "elements": [
+      {
+        "id": "eidriskmanagement;i-should-be--able-to-create-global-functions",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "I should be  able to create Global Functions",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "I visit EmpowerID",
+            "result": {
+              "status": "passed",
+              "duration": 48737000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "I enter valid username and password on login page",
+            "result": {
+              "status": "passed",
+              "duration": 2066000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 6,
+            "name": "I press login button",
+            "result": {
+              "status": "passed",
+              "duration": 6808000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "I should see 'Which Persona do you want to login' as on Person selection page",
+            "result": {
+              "status": "passed",
+              "duration": 66000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 8,
+            "name": "I click on Ahsan Khan on Person Selection page",
+            "result": {
+              "status": "passed",
+              "duration": 322000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I should see 'hsdfhsdf' tab on dashboard page",
+            "result": {
+              "status": "failed",
+              "duration": 63250000000,
+              "error_message": "AssertionError: Timed out retrying after 35000ms: Expected to find element: `//span[contains (., \"hsdfhsdf\")]`, but never found it.\n    at Context.eval (cypress/support/step-definitions/common.js:60:41)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 10,
+            "name": "I click on 'Compliance' tab on dashboard page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "I click on 'Risk Policies' tab on dashboard page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "I wait '5' seconds",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "I click on 'Global Functions' tab",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "I click on add button",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "Name",
+                      "DisplayName",
+                      "Description",
+                      "FunctionType",
+                      "RiskLevel",
+                      "RiskResourceSet",
+                      "Location"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "CreateGF",
+                      "Ahsan",
+                      "Desc",
+                      "Advanced",
+                      "Critical",
+                      "Active Directory",
+                      "BusinessStructure"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "And ",
+            "line": 15,
+            "name": "I fill in 'Global Functions' form with the following data:",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "I click on 'save' button on 'Global Functions' page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 19,
+            "name": "I should see 'Create Global Function:Ahsan was executed successfully' success message",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
