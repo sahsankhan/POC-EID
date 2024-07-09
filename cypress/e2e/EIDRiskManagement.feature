@@ -58,3 +58,4 @@ Feature: EIDRiskManagement
         And I click on 'Delete' button on Global Functions Page
         And I press 'Yes' button
         Then I should see 'Delete to EditAhsan was executed successfully' success message
+
